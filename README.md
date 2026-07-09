@@ -1,4 +1,4 @@
-# Address City Parser - 純瀏覽器免安裝版
+# Address City Parser
 
 ## 1. 專案用途
 
