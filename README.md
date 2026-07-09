@@ -417,25 +417,9 @@ TW, Taiwan, Taipei City, 臺北市, Taipei, , city
 ### 中文繁簡問題
 
 程式不會自動完整轉換繁簡體。應在 database 中明確加入需要支援的繁中、簡中 alias。
-
 ---
 
-## 14. 交接清單
-
-交接前確認：
-
-- [ ] 整個 `Address-City-Parser` 資料夾可複製到其他位置。
-- [ ] 雙擊 `index.html` 可正常開啟。
-- [ ] 100 筆測試為 100 matched。
-- [ ] TW/CN `.xlsx` 與 `.js` 都存在。
-- [ ] `config.json` 與 `config.js` 設定一致。
-- [ ] Database 更新流程已示範。
-- [ ] `vendor/SHEETJS_LICENSE.txt` 已保留。
-- [ ] 沒有把正式地址檔留在專案資料夾。
-
----
-
-## 15. 已知限制
+## 14. 已知限制
 
 - 僅支援 `.xlsx`。
 - 第一階段只支援 TW 與 CN。
