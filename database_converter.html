@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Database Converter - Address City Parser</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="shell narrow">
+      <header>
+        <div>
+          <p class="eyebrow">MAINTENANCE · OFFLINE</p>
+          <h1>Database<br /><span>Converter</span></h1>
+          <p class="intro">
+            將維護完成的城市 database Excel 轉成主工具可直接載入的 JavaScript。
+            全程在本機瀏覽器處理，不需要 Python、server 或網路。
+          </p>
+        </div>
+      </header>
+
+      <section class="card">
+        <div class="section-title">
+          <div>
+            <p class="eyebrow">01 / DATABASE</p>
+            <h2>選擇國家與 Excel</h2>
+          </div>
+        </div>
+
+        <form id="converterForm">
+          <label class="field-label" for="countrySelect">Country database</label>
+          <select id="countrySelect">
+            <option value="TW">TW - Taiwan</option>
+            <option value="CN">CN - China</option>
+          </select>
+
+          <label class="file-picker converter-picker" for="databaseFile">
+            <input id="databaseFile" type="file" accept=".xlsx" />
+            <span class="file-mark">XLSX</span>
+            <span>
+              <strong id="databaseFileName">選擇城市 database Excel</strong>
+              <small>必須包含統一的 7 個 database 欄位</small>
+            </span>
+          </label>
+
+          <button class="primary" type="submit">
+            Generate Runtime JS <span>→</span>
+          </button>
+        </form>
+
+        <div id="converterMessage" class="message" hidden></div>
+        <p class="maintenance-note">
+          下載後，請將檔案放進 <code>database</code> 資料夾並覆蓋同名的
+          <code>TW_city_database.js</code> 或 <code>CN_city_database.js</code>。
+        </p>
+        <a class="back-link" href="./index.html">← 回到 Address City Parser</a>
+      </section>
+    </main>
+
+    <script src="./vendor/xlsx.full.min.js"></script>
+    <script src="./database_converter_core.js"></script>
+    <script src="./database_converter.js"></script>
+  </body>
+</html>

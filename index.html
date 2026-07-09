@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="zh-Hant">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Address City Parser - Browser Only</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <main class="shell">
+    <header>
+      <div>
+        <p class="eyebrow">NO INSTALL · NO SERVER · OFFLINE</p>
+        <h1>Address City<br /><span>Parser</span></h1>
+        <p class="intro">
+          Excel 與地址資料只在這台電腦的瀏覽器記憶體中處理，
+          不需要 Python、不需要安裝套件，也不會上傳或連線查詢。
+        </p>
+      </div>
+      <div class="offline-badge"><i></i> Browser only</div>
+    </header>
+
+    <section class="card">
+      <div class="section-title">
+        <div>
+          <p class="eyebrow">01 / SELECT FILE</p>
+          <h2>選擇地址 Excel</h2>
+        </div>
+        <p>檔案必須為 .xlsx，並包含 <b>original_address</b> 與 <b>country</b>。</p>
+      </div>
+
+      <form id="parseForm">
+        <label class="file-picker" for="fileInput">
+          <input id="fileInput" type="file" accept=".xlsx" />
+          <span class="file-mark">XLSX</span>
+          <span>
+            <strong id="fileName">按這裡選擇 Excel</strong>
+            <small>支援 TW 與 CN；完全在本機處理</small>
+          </span>
+        </label>
+
+        <button id="parseButton" class="primary" type="submit">
+          Start Parsing <span>→</span>
+        </button>
+      </form>
+      <div id="message" class="message" hidden></div>
+      <a class="maintenance-link" href="./database_converter.html">
+        Database maintenance tool →
+      </a>
+    </section>
+
+    <section id="results" class="results" hidden>
+      <div class="section-title result-title">
+        <div>
+          <p class="eyebrow">02 / RESULT</p>
+          <h2>解析完成</h2>
+        </div>
+        <div class="downloads">
+          <button id="downloadFull" type="button">Download Full Result</button>
+          <button id="downloadUnmatched" type="button">Download Unmatched</button>
+        </div>
+      </div>
+
+      <div class="metrics">
+        <article><span>Total rows</span><strong id="totalRows">0</strong></article>
+        <article class="teal"><span>Matched</span><strong id="matchedRows">0</strong></article>
+        <article class="amber"><span>Unmatched</span><strong id="unmatchedRows">0</strong></article>
+        <article><span>Need review</span><strong id="reviewRows">0</strong></article>
+      </div>
+
+      <div class="table-card">
+        <div class="table-heading">
+          <h3>前 20 筆預覽</h3>
+          <span>LOCAL PREVIEW</span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead id="previewHead"></thead>
+            <tbody id="previewBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="loading" class="loading" hidden>
+    <div class="spinner"></div>
+    <strong>正在本機解析地址…</strong>
+  </div>
+
+  <script src="./config.js"></script>
+  <script src="./vendor/xlsx.full.min.js"></script>
+  <script src="./database/TW_city_database.js"></script>
+  <script src="./database/CN_city_database.js"></script>
+  <script src="./parser_core.js"></script>
+  <script src="./app.js"></script>
+</body>
+
+</html>
