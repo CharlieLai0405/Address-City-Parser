@@ -26,7 +26,7 @@
 
 ## 2. 最快使用方式
 
-1. 保持整個 `browser_only` 資料夾結構不變。
+1. 保持整個 `Address-City-Parser` 資料夾結構不變。
 2. 使用 Microsoft Edge 或 Google Chrome 雙擊開啟 `index.html`。
 3. 選擇包含必要欄位的 `.xlsx`。
 4. 按下 **Start Parsing**。
@@ -250,7 +250,7 @@ TW, Taiwan, Taipei City, 臺北市, Taipei, , city
 
 ## 7. 更新 Database 的免安裝流程
 
-1. 備份整個 `browser_only` 資料夾。
+1. 備份整個 `Address-City-Parser` 資料夾。
 2. 用 Excel 修改：
    - `database/TW_city_database.xlsx`
    - 或 `database/CN_city_database.xlsx`
@@ -424,7 +424,7 @@ TW, Taiwan, Taipei City, 臺北市, Taipei, , city
 
 交接前確認：
 
-- [ ] 整個 `browser_only` 資料夾可複製到其他位置。
+- [ ] 整個 `Address-City-Parser` 資料夾可複製到其他位置。
 - [ ] 雙擊 `index.html` 可正常開啟。
 - [ ] 100 筆測試為 100 matched。
 - [ ] TW/CN `.xlsx` 與 `.js` 都存在。
