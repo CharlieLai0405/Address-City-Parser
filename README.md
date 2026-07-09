@@ -55,7 +55,7 @@ input/city_parser_test_100.xlsx
 ## 3. 資料夾結構
 
 ```text
-browser_only/
+Address-City-Parser/
 ├─ index.html
 ├─ style.css
 ├─ app.js
